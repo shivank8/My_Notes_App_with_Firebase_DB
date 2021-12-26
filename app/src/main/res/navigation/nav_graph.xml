@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/notesHomeFragment">
+
+    <fragment
+        android:id="@+id/addUpdateNoteFragment"
+        android:name="com.shivank.mynotesapp.AddUpdateNoteFragment"
+        android:label="fragment_add_update_note"
+        tools:layout="@layout/fragment_add_update_note" >
+        <action
+            android:id="@+id/nav_to_notesHomeFragment2"
+            app:destination="@id/notesHomeFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/notesHomeFragment"
+        android:name="com.shivank.mynotesapp.NotesHomeFragment"
+        android:label="fragment_notes_home"
+        tools:layout="@layout/fragment_notes_home" >
+        <action
+            android:id="@+id/nav_to_addUpdateNoteFragment"
+            app:destination="@id/addUpdateNoteFragment" />
+        <action
+            android:id="@+id/action_notesHomeFragment_to_googleLoginFragment"
+            app:destination="@id/googleLoginFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/googleLoginFragment"
+        android:name="com.shivank.mynotesapp.GoogleLoginFragment"
+        android:label="fragment_google_login"
+        tools:layout="@layout/fragment_google_login" >
+        <action
+            android:id="@+id/nav_to_notesHomeFragment"
+            app:destination="@id/notesHomeFragment" />
+    </fragment>
+</navigation>
